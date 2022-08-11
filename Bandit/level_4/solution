@@ -1,0 +1,7 @@
+Hi,
+so here in this level you will find a directory named inhere, there you will find around 10 files named -file{00..09}.
+and the flag is in one of these files so either you can just go on and just with concatinating all the files or you can type the command:
+
+file ./file*
+
+this will show you the type of data each file is holding and then you can find the specific ascii text file and that is the file you have your flag in.

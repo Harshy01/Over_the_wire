@@ -1,0 +1,9 @@
+Hi,
+
+in this level you are given a file data.txt having a lots of data and the flag is stored just behind the word millionth.
+
+to find the flag you just need to simply run the command:
+
+cat data.txt | grep millionth
+
+and you will find the flag just near the word millionth.

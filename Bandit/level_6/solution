@@ -1,0 +1,9 @@
+Hi,
+
+so in this level when you login you find nothing in your home directory, your task is to find a file that is owned by user bandit7 and group bandit6 and has a size of 33 bytes.
+
+all you need is to use find command and find that file.
+
+find . -user bandit7 -group bandit6 
+
+when you type this command you'll find that your permissions got denied for every file except one file and when you concatenate you'll find the flag.

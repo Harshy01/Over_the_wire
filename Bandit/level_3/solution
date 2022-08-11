@@ -1,0 +1,9 @@
+Hi,
+so in this level you are given a repository "inhere" when you go inside that repository you find nothing, but wait a minute and type the command:
+ls -lart
+
+this command will give you all the files in long form (even the hiddden files)
+
+that's when you find .hidden in this directory and when you concatenate that you find the flag.
+
+ps: this means that all the files starting with a "." are hidden.

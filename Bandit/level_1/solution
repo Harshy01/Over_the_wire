@@ -1,0 +1,6 @@
+The given file has a file name of "-" which cannot be a input in commands so just go with the full path of the file:
+
+cat ./-
+
+or you can also type cat /home/bandit1/-
+

@@ -1,0 +1,3 @@
+even i was a bit confused why did i use both sort and uniq at the same time but it worked.
+
+sort data.txt | uniq -u

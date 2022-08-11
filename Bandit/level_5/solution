@@ -1,0 +1,8 @@
+Hi,
+
+so in this level there was a directory named inhere and it had many directroies named maybeinhere{00..09}.
+and you need to find a file which has 1033 bytes of data and is human readable and is non executable..
+to find that i used find command and it looked like:
+find . -size 1033c
+
+

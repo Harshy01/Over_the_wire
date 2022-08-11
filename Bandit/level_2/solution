@@ -1,0 +1,7 @@
+In this level you are given with a file named "spaces in this filename"
+
+what you have to do is concatenate this file to find the flag, to do that you can either type the command:
+cat spaces\ in\ this\ filename
+
+or you can also go with writting "cat spa" and then pressing tab this will automatically type the upper command for you.
+

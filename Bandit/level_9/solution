@@ -1,0 +1,21 @@
+Hi,
+so in this file i just go on with doing what the readme file said, i just typed:
+
+grep "==" data.txt
+
+but as it was a binary data file grep replied with 
+"Binary file data.txt matches" 
+
+and that does not give me the flag, so what do i do?
+i just find any other f*cking way to solve it, let's do this!
+
+so, i first got a hexdump of the file and then used grep on that and found four matching options and as i can see the last matching pattern has the flag,
+but the next challenge is to just print that specific flag.
+
+now we have to use grep in such a way that we can get the fouth mathcing pattern and that also with the next two lines as you will see.
+
+xxd data.txt | grep '=='  -A2 | tail -n3 | xxd -r
+
+this command gives the output of flag with some ===
+
+this is the closest i've come to the flag, if you can find more efficient way do ping me up on twitter: harshy01

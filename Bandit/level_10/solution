@@ -1,0 +1,11 @@
+Hi,
+
+so in this level it was preety clear that you need to find the flag which is in data.txt and is in base64 format.
+
+base64 format just means that they are using 64 characters to define their words just like binary uses 2 characters(0 and 1) to define itself and as humans we communicate in a base26 encoding.
+
+so to decode it we just have to use the simple command:
+
+base64 -d data.txt
+
+this will give you the flag.

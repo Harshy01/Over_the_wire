@@ -1,0 +1,10 @@
+Hi,
+
+This level was mostly based on networking on a secure layer i.e SSL/TLS, i wondered around some commands like openssl and telnet then i came across s_client and things were preety easy.
+
+i used the commands:
+
+
+bandit15@bandit:~$ openssl s_client -connect localhost:30001
+
+and then typed the password for current level and it gave me the flag.

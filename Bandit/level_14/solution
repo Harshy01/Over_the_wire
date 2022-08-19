@@ -1,0 +1,14 @@
+Hi,
+
+So here we are, in this level we have to send the password of current level to localhost at a port of 30000.
+
+and there are some hints that the command used are ssh telnet nc openssl s_client nmap.
+
+you can command: man "all the above commands"
+
+
+after i found out that telnet is a command that can be used to communicate between two networks, then i used man command to find about telnet and found it's sypnosis.
+
+telnet localhost 30000
+
+this helped us get connected to localhost at port 30000 and then i typed the flag of current level to get the flag for next level.

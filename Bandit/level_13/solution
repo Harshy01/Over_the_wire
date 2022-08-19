@@ -1,0 +1,14 @@
+Hi,
+
+So in this level you will be given a private ssh key which you will have to use to connect to the ssh server of bandit14 and get the flag for bandit13.
+but as you will see that you can't use ssh key inside the bandit ssh server, you will have to copy the ssh key on your local machine and then type the command to connect to ssh using private key as follows:
+
+ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220
+
+before doing this don't forget to restrict your ssh key as the server won't let you login until the ssh key is protected, for which you'll have to type the command:
+
+chmod 700 sshkey.private
+
+this command will make the key rwx by the owner only.
+
+after you login you'll find the flag in  /etc/bandit_pass/bandit14 .

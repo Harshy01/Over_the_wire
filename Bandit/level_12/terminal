@@ -1,0 +1,112 @@
+bandit12@bandit:/tmp/four7$ xxd -r data.txt > file
+bandit12@bandit:/tmp/four7$ ls
+data.txt  file
+bandit12@bandit:/tmp/four7$ file file
+file: gzip compressed data, was "data2.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+bandit12@bandit:/tmp/four7$ binzip file
+-bash: binzip: command not found
+bandit12@bandit:/tmp/four7$ binwalk file
+-bash: binwalk: command not found
+bandit12@bandit:/tmp/four7$ gzip --decompress file
+gzip: file: unknown suffix -- ignored
+bandit12@bandit:/tmp/four7$ file file
+file: gzip compressed data, was "data2.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+bandit12@bandit:/tmp/four7$ cat file
+P�^data2.bin=��BZh91AY&SY�O����ڞOv���}?��}��^����������ߣ��;����▒4��▒h�F�F��4▒LM
+                                                                               @��z��FM��C�hF�C@�4@f��h
+4hh�▒=C%�>X▒,�k���1��GY��
+�J�쌑Oϊ��{RBp�Qix�Y�Z!d��j�(�搿ݳ��/��A�#�A��F��0P��v��`�"3�
+
+                                          ��d�bX?��z��2��<��A �n}
+5(3A��
+      wO�R����6�XS{�
+���9?L�P�yB��=z�m?�L�Nt*�7{qP���%"�w9�qm4�� N3�6���K��H䋑[��}!
+                                                              d��3A4$��M~�\ɠJ�C�kUƦ\���\�FSN��&=�[��q      \)�$:��H�t&/�(����]��BB9<s ��h=bandit12@bandit:/tmp/four7$ mv file data2.bin
+bandit12@bandit:/tmp/four7$ file data2.bin
+data2.bin: gzip compressed data, was "data2.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+bandit12@bandit:/tmp/four7$ cat data2.bin 
+P�^data2.bin=��BZh91AY&SY�O����ڞOv���}?��}��^����������ߣ��;����▒4��▒h�F�F��4▒LM
+                                                                               @��z��FM��C�hF�C@�4@f��h
+4hh�▒=C%�>X▒,�k���1��GY��
+�J�쌑Oϊ��{RBp�Qix�Y�Z!d��j�(�搿ݳ��/��A�#�A��F��0P��v��`�"3�
+
+                                          ��d�bX?��z��2��<��A �n}
+5(3A��
+      wO�R����6�XS{�
+���9?L�P�yB��=z�m?�L�Nt*�7{qP���%"�w9�qm4�� N3�6���K��H䋑[��}!
+                                                              d��3A4$��M~�\ɠJ�C�kUƦ\���\�FSN��&=�[��q      \)�$:��H�t&/�(����]��BB9<s ��h=bandit12@bandit:/tmp/four7$ man gzip
+bandit12@bandit:/tmp/four7$ gzip -d data2.bin
+gzip: data2.bin: unknown suffix -- ignored
+bandit12@bandit:/tmp/four7$ mv data2.bin file.gz
+bandit12@bandit:/tmp/four7$ gzip file.gz
+gzip: file.gz already has .gz suffix -- unchanged
+bandit12@bandit:/tmp/four7$ gzip -d file.gz
+bandit12@bandit:/tmp/four7$ ls
+data.txt  file
+bandit12@bandit:/tmp/four7$ file file
+file: bzip2 compressed data, block size = 900k
+bandit12@bandit:/tmp/four7$ bzip2 -d file
+bzip2: Can't guess original name for file -- using file.out
+bandit12@bandit:/tmp/four7$ man bzip
+No manual entry for bzip
+bandit12@bandit:/tmp/four7$ man bzip2
+bandit12@bandit:/tmp/four7$ bzip2 -d file
+bzip2: Can't open input file file: No such file or directory.
+bandit12@bandit:/tmp/four7$ ls
+data.txt  file.out
+bandit12@bandit:/tmp/four7$ cat file.oout
+cat: file.oout: No such file or directory
+bandit12@bandit:/tmp/four7$ file file.out 
+file.out: gzip compressed data, was "data4.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+bandit12@bandit:/tmp/four7$ mv file.out file.gz
+bandit12@bandit:/tmp/four7$ gzip -d file.gz 
+bandit12@bandit:/tmp/four7$ ls
+data.txt  file
+bandit12@bandit:/tmp/four7$ cat file
+data5.bin0000644000000000000000000002400013655050006011240 0ustar  rootrootdata6.bin0000644000000000000000000000033613655050006011247 0ustar  rootrootBZh91AY&SY
+                                                            +
+�A��z�<jA��j                                                 ���Y�@�U��Z��t!ހ��u�  �
+            �@ѣ ��!�h▒iM�
+ ���BȨ$fz&1*�Ԇf��zG�g}�+�Q�P(f}���@Թ��▒���Tj�1�P�EƮ��ߨ���@Ț��=�s��*���As*Y��!$r��5���Es�]��B@ 0�,bandit12@bandit:/tmp/four7$ file file                                                                                                                                                                                                         
+file: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/four7$ man tar
+bandit12@bandit:/tmp/four7$ tar -x file
+tar: Refusing to read archive contents from terminal (missing -f option?)
+tar: Error is not recoverable: exiting now
+bandit12@bandit:/tmp/four7$ ls
+data.txt  file
+bandit12@bandit:/tmp/four7$ tar -xf file
+bandit12@bandit:/tmp/four7$ ls
+data5.bin  data.txt  file
+bandit12@bandit:/tmp/four7$ file data5.bin
+data5.bin: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/four7$ tr -xf data5.bin 
+tr: invalid option -- 'x'
+Try 'tr --help' for more information.
+bandit12@bandit:/tmp/four7$ ls
+data5.bin  data.txt  file
+bandit12@bandit:/tmp/four7$ tar -xf data5.bin 
+bandit12@bandit:/tmp/four7$ ls
+data5.bin  data6.bin  data.txt  file
+bandit12@bandit:/tmp/four7$ file data6.bin 
+data6.bin: bzip2 compressed data, block size = 900k
+bandit12@bandit:/tmp/four7$ bzip2 -d data6.bin
+bzip2: Can't guess original name for data6.bin -- using data6.bin.out
+bandit12@bandit:/tmp/four7$ ls
+data5.bin  data6.bin.out  data.txt  file
+bandit12@bandit:/tmp/four7$ file data6.bin.out 
+data6.bin.out: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/four7$ tar -xf data6.bin.out
+bandit12@bandit:/tmp/four7$ ls
+data5.bin  data6.bin.out  data8.bin  data.txt  file
+bandit12@bandit:/tmp/four7$ file data8.bin
+data8.bin: gzip compressed data, was "data9.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+bandit12@bandit:/tmp/four7$ gzip -d data8.bin
+gzip: data8.bin: unknown suffix -- ignored
+bandit12@bandit:/tmp/four7$ mv data8.bin data8.gz
+bandit12@bandit:/tmp/four7$ gzip -d data8.gz
+bandit12@bandit:/tmp/four7$ ls
+data5.bin  data6.bin.out  data8  data.txt  file
+bandit12@bandit:/tmp/four7$ cat data8
+The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+bandit12@bandit:/tmp/four7$ 

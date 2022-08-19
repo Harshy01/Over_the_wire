@@ -1,0 +1,13 @@
+Hi,
+
+so in this level you just get a file which has gibberish data but if you look closely you may find some useful information, that is it somewhat looks like "the password is "flag"".
+
+
+so we try to change every digit by any other digit , what could possibly the encoding , did they change the number of base digit it came to my mind?
+no they didn't as the number of digits are same.
+
+so we try to replace the digit by another digit, and we find that they are rotated by 13 characters and thats a famous encryption known as ROT13, and you can find the flag by either using the command or just downloading the package of rot13:
+
+cat data.txt | tr 'a-zA-Z' 'n-za-mN-ZA-M'
+
+tr command replaces the pattern1 with pattern2
